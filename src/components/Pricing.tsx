@@ -1,62 +1,29 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight, Zap } from 'lucide-react';
 
-const plans = [
-  {
-    name: 'AI Sales Team',
-    price: '$997',
-    period: '/ month',
-    setup: '$2,500',
-    description: 'Everything you need to automate appointment setting and fill your calendar.',
-    items: [
-      '3 AI employees',
-      'AI voice calls',
-      'SMS follow-up sequences',
-      'Automated appointment booking',
-      '5 custom workflows',
-      'Pipeline analytics dashboard',
-    ],
-    highlighted: false,
-    badge: null,
-    cta: 'Book Strategy Call',
-  },
-  {
-    name: 'AI Revenue Department',
-    price: '$2,500',
-    period: '/ month',
-    setup: '$5,000',
-    description: 'A dedicated AI revenue operation for businesses serious about scaling pipeline.',
-    items: [
-      '5 AI employees',
-      'AI voice, SMS & email',
-      'Full inbound + outbound coverage',
-      'Custom CRM integration',
-      'Unlimited workflows',
-      'Dedicated account manager',
-    ],
-    highlighted: true,
-    badge: 'Most popular',
-    cta: 'Schedule a Call',
-  },
-  {
-    name: 'AI Operator',
-    price: '$5,000',
-    period: '/ month',
-    setup: '$10,000',
-    description: 'A complete done-for-you AI revenue team for high-growth businesses ready to dominate.',
-    items: [
-      'Unlimited AI employees',
-      'Custom AI voice & persona training',
-      'White-label options',
-      'Multi-channel orchestration',
-      'Priority onboarding & support',
-      'Weekly performance reviews',
-    ],
-    highlighted: false,
-    badge: null,
-    cta: 'Apply Now',
-  },
+const starter = {
+  name: 'AI Sales Team',
+  price: '$997',
+  period: '/ month',
+  setup: '$2,500 one-time setup',
+  tagline: 'Everything you need to fill your calendar with qualified meetings — without hiring a single SDR.',
+  outcome: 'Average 20+ qualified meetings/month',
+  items: [
+    'AI voice caller — dials leads 24/7',
+    'AI email outreach — personalized at scale',
+    'AI SMS follow-up sequences',
+    'Automatic appointment booking',
+    'CRM sync & pipeline analytics',
+    'Weekly performance optimization',
+    'Dedicated account manager',
+    '14-day money-back guarantee',
+  ],
+};
+
+const addOns = [
+  { name: 'AI Revenue Department', price: '$2,500/mo', desc: '5 agents + inbound coverage + custom CRM' },
+  { name: 'AI Operator', price: '$5,000/mo', desc: 'Unlimited agents + white-label + priority support' },
 ];
 
 export default function Pricing() {
@@ -69,7 +36,7 @@ export default function Pricing() {
         <div className="absolute top-0 right-1/3 w-[600px] h-[400px] bg-sky-600/8 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -78,84 +45,130 @@ export default function Pricing() {
         >
           <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">Pricing</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            Your AI team, fully managed
+            One offer. One outcome.{' '}
+            <span className="text-gradient">Meetings on your calendar.</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            No hiring, no training, no HR headaches. Pick your level and go live in 7 days.
+            No hiring, no training, no management. Your AI workforce is live in 48 hours and booking qualified meetings within the first week.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 items-stretch">
-          {plans.map((plan, i) => (
-            <motion.div
+        {/* Main pricing card */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.15, duration: 0.6, ease: 'easeOut' }}
+          className="relative rounded-3xl overflow-hidden mb-8"
+          style={{
+            background: 'linear-gradient(135deg, rgba(14,26,50,1) 0%, rgba(8,18,38,1) 100%)',
+            border: '1px solid rgba(56,189,248,0.25)',
+            boxShadow: '0 0 80px rgba(56,189,248,0.08)',
+          }}
+        >
+          {/* Top accent bar */}
+          <div className="h-1 w-full bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-500" />
+
+          <div className="p-8 md:p-12">
+            <div className="flex flex-col lg:flex-row gap-10">
+
+              {/* Left: name, price, tagline */}
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/15 text-sky-300 text-xs font-bold border border-sky-500/30">
+                    <Zap size={10} /> Most Popular
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold border border-emerald-500/30">
+                    Live in 48 hours
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold text-white mb-2">{starter.name}</h3>
+                <p className="text-slate-400 text-base leading-relaxed mb-6 max-w-sm">{starter.tagline}</p>
+
+                <div className="mb-2">
+                  <div className="flex items-end gap-2">
+                    <span className="text-6xl font-black text-white tracking-tight">{starter.price}</span>
+                    <span className="text-slate-400 text-base pb-2">{starter.period}</span>
+                  </div>
+                  <p className="text-slate-500 text-sm mt-1">{starter.setup}</p>
+                </div>
+
+                {/* Outcome highlight */}
+                <div
+                  className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl"
+                  style={{ background: 'rgba(52,211,153,0.1)', border: '1px solid rgba(52,211,153,0.25)' }}
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span className="text-emerald-400 text-sm font-semibold">{starter.outcome}</span>
+                </div>
+              </div>
+
+              {/* Right: features + CTA */}
+              <div className="flex-1 flex flex-col">
+                <ul className="flex flex-col gap-3 flex-1 mb-8">
+                  {starter.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-sky-500/20 border border-sky-500/40 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check size={11} className="text-sky-400" />
+                      </div>
+                      <span className="text-slate-300 text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="https://cal.com/fouad-shariff-a4ffvv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-full py-4 rounded-xl font-bold text-sm text-center text-white bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/35 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                >
+                  Deploy Your AI Sales Team
+                  <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Scale-up tiers */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="grid md:grid-cols-2 gap-4 mb-8"
+        >
+          {addOns.map((plan) => (
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.6, ease: 'easeOut' }}
-              className={`relative flex flex-col rounded-2xl p-7 ${
-                plan.highlighted
-                  ? 'bg-sky-500/10 border border-sky-500/40 glow'
-                  : 'glass'
-              }`}
+              className="rounded-2xl p-6 flex items-center justify-between gap-4"
+              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
-              {plan.badge && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="px-3 py-1 rounded-full bg-sky-500 text-white text-xs font-semibold whitespace-nowrap">
-                    {plan.badge}
-                  </span>
-                </div>
-              )}
-
-              <div className="mb-5">
-                <h3 className="text-lg font-semibold text-white mb-1">{plan.name}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{plan.description}</p>
+              <div>
+                <p className="text-white font-semibold text-sm mb-1">{plan.name}</p>
+                <p className="text-slate-500 text-xs">{plan.desc}</p>
               </div>
-
-              <div className="mb-6">
-                <div className="flex items-end gap-1 mb-2">
-                  <span className="text-5xl font-bold text-white">{plan.price}</span>
-                  <span className="text-slate-400 text-sm pb-1.5">{plan.period}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-slate-500 line-through decoration-slate-600">one-time</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-xs font-semibold">
-                    + {plan.setup} setup
-                  </span>
-                </div>
+              <div className="text-right shrink-0">
+                <p className="text-sky-400 font-bold text-sm">{plan.price}</p>
+                <a
+                  href="https://cal.com/fouad-shariff-a4ffvv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate-500 hover:text-slate-300 transition-colors mt-1 inline-block"
+                >
+                  Learn more →
+                </a>
               </div>
-
-              <ul className="flex flex-col gap-3 mb-8 flex-1">
-                {plan.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <Check size={16} className="text-sky-400 shrink-0 mt-0.5" />
-                    <span className="text-slate-300 text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://cal.com/fouad-shariff-a4ffvv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-full py-3 rounded-xl font-semibold text-sm text-center transition-all duration-200 hover:-translate-y-0.5 ${
-                  plan.highlighted
-                    ? 'bg-sky-500 hover:bg-sky-400 text-white shadow-lg shadow-sky-500/25'
-                    : 'glass hover:bg-white/10 text-slate-200'
-                }`}
-              >
-                {plan.cta}
-              </a>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-center text-slate-500 text-sm mt-8"
+          transition={{ delay: 0.45, duration: 0.6 }}
+          className="text-center text-slate-500 text-sm"
         >
-          All plans include a 14-day money-back guarantee &middot; No long-term contracts &middot; Cancel anytime
+          All plans include 14-day money-back guarantee · No long-term contracts · Cancel anytime
         </motion.p>
       </div>
     </section>

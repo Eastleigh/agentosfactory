@@ -5,6 +5,7 @@ import PoweredBy from './components/PoweredBy';
 import Stats from './components/Stats';
 import AIAgents from './components/AIAgents';
 import Features from './components/Features';
+import WhoItsFor from './components/WhoItsFor';
 import Comparison from './components/Comparison';
 import ProductScreenshots from './components/ProductScreenshots';
 import HowItWorks from './components/HowItWorks';
@@ -38,6 +39,7 @@ function App() {
       <main>
         <Hero />
         <PoweredBy />
+        <WhoItsFor />
         <Stats />
         <AIAgents />
         <Features />

@@ -1,12 +1,51 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, TrendingUp, Clock, CalendarCheck, DollarSign } from 'lucide-react';
 
 const stats = [
-  { value: '11x', label: 'Average ROI vs. in-house SDR team', color: '#38bdf8' },
-  { value: '36h', label: 'Average time to first booked meeting', color: '#34d399' },
-  { value: '500+', label: 'Qualified meetings booked per month', color: '#fbbf24' },
-  { value: '87%', label: 'Reduction in cost per booked meeting', color: '#f87171' },
+  {
+    icon: TrendingUp,
+    value: '11x',
+    label: 'Average ROI vs. in-house SDR team',
+    sub: 'Based on 120+ deployments',
+    color: '#38bdf8',
+    bg: 'rgba(56,189,248,0.08)',
+    border: 'rgba(56,189,248,0.15)',
+  },
+  {
+    icon: Clock,
+    value: '36h',
+    label: 'Average time to first booked meeting',
+    sub: 'From go-live to calendar invite',
+    color: '#34d399',
+    bg: 'rgba(52,211,153,0.08)',
+    border: 'rgba(52,211,153,0.15)',
+  },
+  {
+    icon: CalendarCheck,
+    value: '500+',
+    label: 'Qualified meetings booked per month',
+    sub: 'Across all active clients',
+    color: '#fbbf24',
+    bg: 'rgba(251,191,36,0.08)',
+    border: 'rgba(251,191,36,0.15)',
+  },
+  {
+    icon: DollarSign,
+    value: '87%',
+    label: 'Reduction in cost per booked meeting',
+    sub: 'vs. traditional outbound teams',
+    color: '#f87171',
+    bg: 'rgba(248,113,113,0.08)',
+    border: 'rgba(248,113,113,0.15)',
+  },
+];
+
+const outcomes = [
+  { label: '148', desc: 'Leads Found' },
+  { label: '37', desc: 'Calls Made' },
+  { label: '12', desc: 'Meetings Booked' },
+  { label: '$0', desc: 'Extra Headcount' },
 ];
 
 export default function Stats() {
@@ -29,54 +68,77 @@ export default function Stats() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="flex-1 max-w-lg"
           >
-            <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-5">Why we exist</p>
+            <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-5">The Results</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
-              We build AI workforces that<br />
-              <span className="text-gradient">outperform human teams</span><br />
-              at a fraction of the cost.
+              Real numbers from{' '}
+              <span className="text-gradient">real deployments</span>
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed mb-8">
-              When you work with us, you get specialists who transform sales pipelines through intelligent, always-on AI. Your competitors will wonder how you scaled so fast.
+            <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              Every stat below comes from active client deployments. Not a demo. Not projections. Your AI workforce starts producing measurable results within 36 hours of going live.
             </p>
+
+            {/* Outcome strip */}
+            <div className="grid grid-cols-4 gap-3 mb-8">
+              {outcomes.map((o) => (
+                <div
+                  key={o.desc}
+                  className="rounded-xl p-3 text-center"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                >
+                  <p className="text-white font-black text-xl leading-none mb-1">{o.label}</p>
+                  <p className="text-slate-500 text-[10px] font-medium leading-tight">{o.desc}</p>
+                </div>
+              ))}
+            </div>
+
             <a
               href="https://cal.com/fouad-shariff-a4ffvv"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 text-sky-400 font-semibold text-sm hover:text-sky-300 transition-colors"
             >
-              Book a strategy call
+              See how it works for your business
               <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </motion.div>
 
-          {/* Right: 2x2 stat grid */}
+          {/* Right: stat cards */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
             className="flex-1 w-full grid grid-cols-2 gap-4"
           >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2 + i * 0.1, duration: 0.55 }}
-                className="rounded-2xl p-6 flex flex-col gap-3"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                }}
-              >
-                <div
-                  className="text-5xl font-black tracking-tight leading-none"
-                  style={{ color: stat.color }}
+            {stats.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.2 + i * 0.1, duration: 0.55 }}
+                  className="rounded-2xl p-6 flex flex-col gap-3"
+                  style={{ background: stat.bg, border: `1px solid ${stat.border}` }}
                 >
-                  {stat.value}
-                </div>
-                <p className="text-slate-400 text-sm leading-snug">{stat.label}</p>
-              </motion.div>
-            ))}
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center"
+                    style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${stat.border}` }}
+                  >
+                    <Icon size={16} style={{ color: stat.color }} />
+                  </div>
+                  <div
+                    className="text-5xl font-black tracking-tight leading-none"
+                    style={{ color: stat.color }}
+                  >
+                    {stat.value}
+                  </div>
+                  <div>
+                    <p className="text-slate-300 text-sm font-medium leading-snug mb-1">{stat.label}</p>
+                    <p className="text-slate-500 text-xs">{stat.sub}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>

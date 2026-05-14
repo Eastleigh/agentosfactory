@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { ArrowRight, Zap, Phone, Mail, MessageSquare, Calendar } from 'lucide-react';
+import { ArrowRight, Zap, Phone, Mail, MessageSquare, Calendar, Check } from 'lucide-react';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -42,19 +42,20 @@ const LOG_ENTRIES = [
   { icon: Mail, text: 'Synced 23 new contacts to CRM — pipeline updated', color: '#fbbf24' },
 ];
 
-const ROTATING_ROLES = [
-  'Cold Caller',
-  'Follow-Up Specialist',
-  'Email Outreach Rep',
-  'Appointment Setter',
-  'Lead Qualifier',
-];
-
 const statCards = [
   { label: 'Leads found', target: 148, color: '#38bdf8', bgColor: 'rgba(56,189,248,0.08)', borderColor: 'rgba(56,189,248,0.18)' },
   { label: 'Emails drafted', target: 96, color: '#fbbf24', bgColor: 'rgba(251,191,36,0.08)', borderColor: 'rgba(251,191,36,0.18)' },
   { label: 'Calls completed', target: 37, color: '#a78bfa', bgColor: 'rgba(167,139,250,0.08)', borderColor: 'rgba(167,139,250,0.18)' },
   { label: 'Meetings booked', target: 12, color: '#34d399', bgColor: 'rgba(52,211,153,0.08)', borderColor: 'rgba(52,211,153,0.2)' },
+];
+
+const WHAT_IT_DOES = [
+  'Finds and enriches leads automatically',
+  'Writes personalized outreach at scale',
+  'Follows up via phone, email, and SMS',
+  'Qualifies prospects without human effort',
+  'Books meetings directly into your calendar',
+  'Works 24/7 — never calls in sick',
 ];
 
 function AgentDashboard() {
@@ -73,12 +74,15 @@ function AgentDashboard() {
     const show = () => {
       if (i >= LOG_ENTRIES.length) return;
       const idx = i;
-      setVisibleLogs((prev) => prev.includes(idx) ? prev : [...prev, idx]);
+      setVisibleLogs((prev) => (prev.includes(idx) ? prev : [...prev, idx]));
       i++;
       if (i < LOG_ENTRIES.length) timer = setTimeout(show, 620);
     };
     const t = setTimeout(show, 1800);
-    return () => { clearTimeout(t); clearTimeout(timer); };
+    return () => {
+      clearTimeout(t);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -90,7 +94,7 @@ function AgentDashboard() {
       <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
         <div>
           <p className="text-slate-500 text-xs font-medium">Revenue Workforce</p>
-          <h3 className="text-white text-sm font-bold mt-0.5">Appointment Setter Active</h3>
+          <h3 className="text-white text-sm font-bold mt-0.5">AI Agents Active — Live Dashboard</h3>
         </div>
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -98,7 +102,7 @@ function AgentDashboard() {
         </span>
       </div>
 
-      {/* Stat grid — 4 colored cards */}
+      {/* Stat grid */}
       <div className="grid grid-cols-2 gap-2.5 p-4">
         {statCards.map((s, i) => (
           <div
@@ -158,32 +162,6 @@ function AgentDashboard() {
   );
 }
 
-function RotatingRole() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % ROTATING_ROLES.length), 2200);
-    return () => clearInterval(t);
-  }, []);
-
-  return (
-    <span className="relative inline-block overflow-hidden h-[1.1em] align-bottom w-[200px] md:w-[260px]">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={index}
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -30, opacity: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="absolute inset-0 text-gradient"
-        >
-          {ROTATING_ROLES[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
-  );
-}
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
@@ -211,21 +189,11 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-semibold text-sky-300 mb-5 border border-sky-500/20"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-semibold text-sky-300 mb-6 border border-sky-500/20"
             >
               <Zap size={11} className="text-sky-400" />
-              Meet your AI Sales Workforce — live in 48 hours
+              AI outbound workforce — live in 48 hours
             </motion.div>
-
-            <motion.p
-              custom={0.5}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="text-slate-400 text-base font-medium mb-3 tracking-wide"
-            >
-              Your Superhuman <RotatingRole />
-            </motion.p>
 
             <motion.h1
               custom={1}
@@ -234,8 +202,8 @@ export default function Hero() {
               animate="visible"
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6"
             >
-              Replace Your SDR Team. Deploy a{' '}
-              <span className="text-gradient">Sales Workforce That Never Stops</span>
+              Stop Hiring SDRs.{' '}
+              <span className="text-gradient">Deploy AI That Books Meetings.</span>
             </motion.h1>
 
             <motion.p
@@ -243,11 +211,30 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="max-w-xl text-lg text-slate-400 leading-relaxed mb-10 mx-auto lg:mx-0"
+              className="max-w-xl text-xl text-slate-300 leading-relaxed mb-8 mx-auto lg:mx-0"
             >
-              We build and deploy your AI appointment-setting team — callers, follow-up specialists, and lead qualifiers working across phone, email, SMS, and CRM around the clock.
+              AI outbound agents that find leads, write personalized outreach, follow up automatically, qualify prospects, and book meetings — replacing repetitive SDR workflows in 48 hours.
             </motion.p>
 
+            {/* Bullet proof section */}
+            <motion.ul
+              custom={2.5}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col gap-2.5 mb-10 mx-auto lg:mx-0 max-w-md text-left"
+            >
+              {WHAT_IT_DOES.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-slate-300">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
+                    <Check size={11} className="text-emerald-400" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
+
+            {/* CTAs */}
             <motion.div
               custom={3}
               variants={fadeUp}
@@ -259,9 +246,9 @@ export default function Hero() {
                 href="https://cal.com/fouad-shariff-a4ffvv"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm transition-all duration-200 shadow-xl shadow-sky-500/30 hover:shadow-sky-400/35 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm transition-all duration-200 shadow-xl shadow-sky-500/30 hover:shadow-sky-400/35 hover:-translate-y-0.5 whitespace-nowrap"
               >
-                Book a strategy call
+                Book Your AI Workforce Demo
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
@@ -277,12 +264,12 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mt-6 text-xs text-slate-500 text-center lg:text-left"
+              className="mt-5 text-xs text-slate-500 text-center lg:text-left"
             >
               No hiring · No training · No long-term contract · Cancel anytime
             </motion.p>
 
-            {/* Social proof row */}
+            {/* Social proof */}
             <motion.div
               custom={5}
               variants={fadeUp}
@@ -313,7 +300,10 @@ export default function Hero() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-slate-400 text-xs">Trusted by <span className="text-slate-200 font-semibold">120+ founders</span></p>
+                <p className="text-slate-400 text-xs">
+                  Trusted by <span className="text-slate-200 font-semibold">120+ founders</span> — first meeting booked in{' '}
+                  <span className="text-sky-400 font-semibold">36 hours</span>
+                </p>
               </div>
             </motion.div>
           </div>
