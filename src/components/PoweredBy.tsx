@@ -67,7 +67,7 @@ export default function PoweredBy() {
           transition={{ duration: 0.5 }}
           className="text-center text-xs font-semibold uppercase tracking-widest text-slate-500"
         >
-          Powered by industry-leading infrastructure
+          Integrates with the tools you already use
         </motion.p>
       </div>
 

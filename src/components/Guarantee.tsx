@@ -50,10 +50,10 @@ export default function Guarantee() {
             transition={{ delay: 0.25, duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] mb-6 text-white"
           >
-            If we do not save you{' '}
-            <span style={{ color: '#34d399' }}>$50,000&nbsp;/&nbsp;year</span>{' '}
-            in payroll,<br className="hidden md:block" />
-            you do not pay.
+            If we don't increase your{' '}
+            <span style={{ color: '#34d399' }}>lead&nbsp;capture&nbsp;by&nbsp;3x</span>{' '}
+            in 90 days,<br className="hidden md:block" />
+            you don't pay.
           </motion.h2>
 
           <motion.p
@@ -62,7 +62,7 @@ export default function Guarantee() {
             transition={{ delay: 0.35, duration: 0.6 }}
             className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed mb-10"
           >
-            We run our own AI-first businesses on this system. We know what it produces. The guarantee isn't a sales tactic — it's just the math.
+            We use these exact AI systems to run our own businesses. We know what they produce. The guarantee isn't a sales tactic — it's just confidence in the results.
           </motion.p>
 
           <motion.div
@@ -81,7 +81,7 @@ export default function Guarantee() {
                 boxShadow: '0 8px 32px rgba(16,185,129,0.3)',
               }}
             >
-              Hold us to it — book a call
+              Hold us to it — book your free audit
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </motion.div>
@@ -93,7 +93,7 @@ export default function Guarantee() {
             transition={{ delay: 0.5 }}
             className="text-slate-600 text-xs mt-8"
           >
-            Calculated against a fully-loaded SDR salary + overhead. Results validated across 100+ client deployments.
+            Measured against your current lead capture rate. Results validated across 100+ client deployments.
           </motion.p>
         </motion.div>
       </div>

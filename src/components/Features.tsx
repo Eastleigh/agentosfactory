@@ -6,8 +6,8 @@ const features = [
   {
     number: '01',
     icon: Phone,
-    title: 'Voice Caller',
-    description: 'Your dedicated caller dials leads, handles objections in real time, and qualifies prospects — sounding indistinguishable from a top-performing rep. No voicemail, no hesitation, no bad days.',
+    title: 'AI Voice Receptionists',
+    description: 'Never miss another call. Our AI answers every inbound call with a natural voice, qualifies callers, captures information, and books appointments — 24/7, including nights and weekends.',
     accent: '#38bdf8',
     accentBg: 'rgba(56,189,248,0.08)',
     accentBorder: 'rgba(56,189,248,0.2)',
@@ -16,8 +16,8 @@ const features = [
   {
     number: '02',
     icon: MessageSquare,
-    title: 'SMS Follow-Up',
-    description: 'Personalized text sequences that re-engage cold leads and push warm ones toward a booked call — relentless and never burned out.',
+    title: 'AI Chatbots',
+    description: 'Engage every website visitor with an intelligent chatbot that qualifies leads, answers questions, and pushes prospects toward booking — instantly.',
     accent: '#34d399',
     accentBg: 'rgba(52,211,153,0.08)',
     accentBorder: 'rgba(52,211,153,0.2)',
@@ -26,8 +26,8 @@ const features = [
   {
     number: '03',
     icon: Mail,
-    title: 'Email Outreach',
-    description: 'Highly personalized cold campaigns that adapt based on opens, replies, and intent — like a full-time email specialist.',
+    title: 'SMS & Email Automation',
+    description: 'Automated follow-up sequences that nurture leads, re-engage past customers, and keep your pipeline flowing without lifting a finger.',
     accent: '#fbbf24',
     accentBg: 'rgba(251,191,36,0.08)',
     accentBorder: 'rgba(251,191,36,0.2)',
@@ -36,8 +36,8 @@ const features = [
   {
     number: '04',
     icon: Calendar,
-    title: 'Appointment Setter',
-    description: 'When a lead is ready, your setter books the meeting directly into your calendar. No back-and-forth, no missed slots, no no-shows.',
+    title: 'Appointment Booking',
+    description: 'Automated scheduling that fills your calendar. Sends confirmations, handles reschedules, reduces no-shows — all without human involvement.',
     accent: '#f87171',
     accentBg: 'rgba(248,113,113,0.08)',
     accentBorder: 'rgba(248,113,113,0.2)',
@@ -46,8 +46,8 @@ const features = [
   {
     number: '05',
     icon: BarChart3,
-    title: 'Pipeline Analytics',
-    description: 'See exactly where leads drop off, which sequences convert best, and how your workforce performs — in a single live dashboard.',
+    title: 'CRM Integrations',
+    description: 'Seamless two-way sync with GoHighLevel, HubSpot, Salesforce, and more. Every lead, call, and interaction logged automatically.',
     accent: '#22d3ee',
     accentBg: 'rgba(34,211,238,0.08)',
     accentBorder: 'rgba(34,211,238,0.2)',
@@ -56,8 +56,8 @@ const features = [
   {
     number: '06',
     icon: Brain,
-    title: 'Continuous Optimization',
-    description: 'Your workforce gets sharper over time — learning from every call, reply, and booked meeting to lift conversion rates automatically.',
+    title: 'Workflow Automation',
+    description: 'Custom intelligent workflows that connect your tools, automate repetitive tasks, and create a seamless digital workforce operating around the clock.',
     accent: '#2dd4bf',
     accentBg: 'rgba(45,212,191,0.08)',
     accentBorder: 'rgba(45,212,191,0.2)',
@@ -90,12 +90,12 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">Capabilities</p>
+          <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">Our Services</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            A full revenue workforce in one deployment
+            A complete AI automation system for your business
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Every channel your appointment-setting team needs — operating together 24/7.
+            Everything you need to capture leads, respond instantly, and convert more customers — running 24/7.
           </p>
         </motion.div>
 

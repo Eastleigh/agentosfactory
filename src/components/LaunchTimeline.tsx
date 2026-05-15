@@ -4,50 +4,50 @@ import { motion, useInView } from 'framer-motion';
 const days = [
   {
     day: 'Day 1',
-    title: 'Strategy & Onboarding',
-    description: 'We map your ICP, define outreach goals, and connect your CRM, calendar, and communication channels.',
+    title: 'Discovery & Strategy',
+    description: 'We map your business processes, customer journey, and automation goals. We plan the AI receptionist scripts, chatbot flows, and follow-up sequences.',
     color: 'from-sky-500 to-sky-400',
     dot: 'bg-sky-400',
   },
   {
     day: 'Day 2',
     title: 'CRM & Integrations',
-    description: 'All systems go. GoHighLevel, Apollo, Gmail, Twilio, and Google Calendar are wired up and tested.',
+    description: 'GoHighLevel, HubSpot, Google Calendar, Twilio, and your existing tools are connected and configured for two-way sync.',
     color: 'from-cyan-500 to-cyan-400',
     dot: 'bg-cyan-400',
   },
   {
     day: 'Day 3',
-    title: 'Workflow Configuration',
-    description: 'Your custom prospecting, follow-up, and booking workflows are built and configured to match your exact sales process.',
+    title: 'AI Voice Receptionist Setup',
+    description: 'Your AI voice agent is trained on your business, services, and booking process. Test calls are run and refined until it sounds perfect.',
     color: 'from-sky-500 to-cyan-400',
     dot: 'bg-sky-400',
   },
   {
     day: 'Day 4',
-    title: 'Outreach Activation',
-    description: 'Email sequences and SMS follow-ups go live. Your lead gen and follow-up specialists start finding prospects and initiating contact.',
+    title: 'Chatbot & Lead Capture',
+    description: 'Your AI chatbot is deployed on your website with custom qualification scripts, FAQ handling, and booking capabilities.',
     color: 'from-cyan-500 to-sky-400',
     dot: 'bg-cyan-400',
   },
   {
     day: 'Day 5',
-    title: 'Voice Caller Setup',
-    description: 'Your caller is trained on your offer, objection handling, and booking script. Test calls are run and approved before going live.',
+    title: 'Automation Workflows',
+    description: 'SMS & email follow-up sequences, appointment reminders, and lead nurture campaigns are built and activated.',
     color: 'from-sky-500 to-sky-400',
     dot: 'bg-sky-400',
   },
   {
     day: 'Day 6',
     title: 'Testing & Approvals',
-    description: 'Full end-to-end testing across every channel. You review and approve everything before a single lead is contacted.',
+    description: 'Full end-to-end testing across every channel. You review and approve everything before going live with real customers.',
     color: 'from-cyan-500 to-cyan-400',
     dot: 'bg-cyan-400',
   },
   {
     day: 'Day 7',
     title: 'Go Live',
-    description: "Your AI revenue team is fully operational. Leads flow in, calls are made, and appointments land on your calendar.",
+    description: 'Your complete AI automation system is fully operational. Calls are answered, leads are captured, and appointments land on your calendar.',
     color: 'from-emerald-500 to-emerald-400',
     dot: 'bg-emerald-400',
   },
@@ -75,7 +75,7 @@ export default function LaunchTimeline() {
             Live in 7 days, not 7 months
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            Most SDR agencies take months to ramp. We deliver a fully operational revenue workforce in one week.
+            Most agencies take months to implement. We deliver a fully operational AI automation system in one week.
           </p>
         </motion.div>
 

@@ -1,8 +1,9 @@
 import { Bot, Twitter, Linkedin } from 'lucide-react';
 
 const sectionLinks = [
-  { label: 'Capabilities', href: '#features' },
+  { label: 'Services', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Industries', href: '#industries' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Results', href: '#testimonials' },
 ];
@@ -17,10 +18,10 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center">
                 <Bot size={18} className="text-white" />
               </div>
-              <span className="font-semibold text-lg text-white">Sales Workforce AI</span>
+              <span className="font-semibold text-lg text-white">AgentOS Factory</span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-6">
-              A dedicated appointment-setting team that prospects, follows up, and books meetings — so your closers only talk to people ready to buy.
+              We build AI-powered business automation systems that capture leads, answer customers instantly, book appointments, and increase revenue 24/7.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -58,7 +59,7 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Get in touch</h4>
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
-              Ready to build your revenue workforce? Book a strategy call and we'll have your team live in 48 hours.
+              Ready to automate your business? Book a free AI audit and we'll have your system live in 7 days.
             </p>
             <a
               href="https://cal.com/fouad-shariff-a4ffvv"
@@ -66,14 +67,14 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-white text-sm font-medium transition-colors duration-200"
             >
-              Book a strategy call
+              Book a free AI audit
             </a>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">&copy; {new Date().getFullYear()} Sales Workforce AI. All rights reserved.</p>
-          <p className="text-slate-500 text-sm">Built for founders and revenue teams who demand results.</p>
+          <p className="text-slate-500 text-sm">&copy; {new Date().getFullYear()} AgentOS Factory. All rights reserved.</p>
+          <p className="text-slate-500 text-sm">AI-powered automation for service businesses that demand results.</p>
         </div>
       </div>
     </footer>

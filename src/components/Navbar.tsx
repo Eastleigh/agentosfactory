@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Capabilities', href: '#features' },
+  { label: 'Services', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Timeline', href: '#timeline' },
+  { label: 'Industries', href: '#industries' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Results', href: '#testimonials' },
 ];
@@ -34,7 +34,7 @@ export default function Navbar() {
           <div className="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center group-hover:bg-sky-400 transition-colors">
             <Bot size={18} className="text-white" />
           </div>
-          <span className="font-semibold text-lg tracking-tight text-white">Sales Workforce AI</span>
+          <span className="font-semibold text-lg tracking-tight text-white">AgentOS Factory</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">

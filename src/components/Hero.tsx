@@ -34,28 +34,28 @@ function useCounter(target: number, duration = 1800, startDelay = 800) {
 }
 
 const LOG_ENTRIES = [
-  { icon: Phone, text: 'Called 9 warm leads — 3 appointments booked', color: '#38bdf8' },
-  { icon: Mail, text: 'Drafted 18 personalized outreach emails', color: '#fbbf24' },
-  { icon: MessageSquare, text: 'Sent 11 follow-up SMS sequences to cold leads', color: '#34d399' },
-  { icon: Calendar, text: 'Booked Marcus Rivera — Tuesday 2:00 PM confirmed', color: '#34d399' },
-  { icon: Phone, text: 'Qualified 7 inbound inquiries from the website', color: '#38bdf8' },
-  { icon: Mail, text: 'Synced 23 new contacts to CRM — pipeline updated', color: '#fbbf24' },
+  { icon: Phone, text: 'AI receptionist answered 14 inbound calls — 6 booked', color: '#38bdf8' },
+  { icon: MessageSquare, text: 'Chatbot qualified 9 website leads in real time', color: '#34d399' },
+  { icon: Mail, text: 'Sent 22 automated follow-up emails to warm leads', color: '#fbbf24' },
+  { icon: Calendar, text: 'Booked Sarah M. — Thursday 10:30 AM confirmed', color: '#34d399' },
+  { icon: Phone, text: 'Voice agent handled 5 after-hours emergency calls', color: '#38bdf8' },
+  { icon: Mail, text: 'Synced 31 contacts to CRM — pipeline updated', color: '#fbbf24' },
 ];
 
 const statCards = [
-  { label: 'Leads found', target: 148, color: '#38bdf8', bgColor: 'rgba(56,189,248,0.08)', borderColor: 'rgba(56,189,248,0.18)' },
-  { label: 'Emails drafted', target: 96, color: '#fbbf24', bgColor: 'rgba(251,191,36,0.08)', borderColor: 'rgba(251,191,36,0.18)' },
-  { label: 'Calls completed', target: 37, color: '#a78bfa', bgColor: 'rgba(167,139,250,0.08)', borderColor: 'rgba(167,139,250,0.18)' },
-  { label: 'Meetings booked', target: 12, color: '#34d399', bgColor: 'rgba(52,211,153,0.08)', borderColor: 'rgba(52,211,153,0.2)' },
+  { label: 'Calls answered', target: 214, color: '#38bdf8', bgColor: 'rgba(56,189,248,0.08)', borderColor: 'rgba(56,189,248,0.18)' },
+  { label: 'Leads captured', target: 127, color: '#fbbf24', bgColor: 'rgba(251,191,36,0.08)', borderColor: 'rgba(251,191,36,0.18)' },
+  { label: 'Follow-ups sent', target: 89, color: '#a78bfa', bgColor: 'rgba(167,139,250,0.08)', borderColor: 'rgba(167,139,250,0.18)' },
+  { label: 'Appts booked', target: 43, color: '#34d399', bgColor: 'rgba(52,211,153,0.08)', borderColor: 'rgba(52,211,153,0.2)' },
 ];
 
 const WHAT_IT_DOES = [
-  'Finds and enriches leads automatically',
-  'Writes personalized outreach at scale',
-  'Follows up via phone, email, and SMS',
-  'Qualifies prospects without human effort',
-  'Books meetings directly into your calendar',
-  'Works 24/7 — never calls in sick',
+  'AI voice receptionist answers every call 24/7',
+  'AI chatbot captures & qualifies leads instantly',
+  'Automated SMS & email follow-up sequences',
+  'Books appointments directly into your calendar',
+  'Syncs with your CRM — GoHighLevel, HubSpot & more',
+  'Works around the clock — never misses a lead',
 ];
 
 function AgentDashboard() {
@@ -93,8 +93,8 @@ function AgentDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
         <div>
-          <p className="text-slate-500 text-xs font-medium">Revenue Workforce</p>
-          <h3 className="text-white text-sm font-bold mt-0.5">AI Agents Active — Live Dashboard</h3>
+          <p className="text-slate-500 text-xs font-medium">AgentOS Factory</p>
+          <h3 className="text-white text-sm font-bold mt-0.5">AI Automation Active — Live Dashboard</h3>
         </div>
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -192,7 +192,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-semibold text-sky-300 mb-6 border border-sky-500/20"
             >
               <Zap size={11} className="text-sky-400" />
-              AI outbound workforce — live in 48 hours
+              AI-powered business automation — live in 7 days
             </motion.div>
 
             <motion.h1
@@ -202,8 +202,8 @@ export default function Hero() {
               animate="visible"
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6"
             >
-              Stop Hiring SDRs.{' '}
-              <span className="text-gradient">Deploy AI That Books Meetings.</span>
+              Stop Losing Leads.{' '}
+              <span className="text-gradient">Deploy AI That Works 24/7.</span>
             </motion.h1>
 
             <motion.p
@@ -213,7 +213,7 @@ export default function Hero() {
               animate="visible"
               className="max-w-xl text-xl text-slate-300 leading-relaxed mb-8 mx-auto lg:mx-0"
             >
-              AI outbound agents that find leads, write personalized outreach, follow up automatically, qualify prospects, and book meetings — replacing repetitive SDR workflows in 48 hours.
+              AI voice receptionists, chatbots, and automation systems that capture leads, answer customers instantly, book appointments, and automate follow-ups — so you never miss revenue again.
             </motion.p>
 
             {/* Bullet proof section */}
@@ -248,7 +248,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm transition-all duration-200 shadow-xl shadow-sky-500/30 hover:shadow-sky-400/35 hover:-translate-y-0.5 whitespace-nowrap"
               >
-                Book Your AI Workforce Demo
+                Get Your Free AI Audit
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
@@ -266,7 +266,7 @@ export default function Hero() {
               animate="visible"
               className="mt-5 text-xs text-slate-500 text-center lg:text-left"
             >
-              No hiring · No training · No long-term contract · Cancel anytime
+              No long-term contracts · Live in 7 days · Cancel anytime
             </motion.p>
 
             {/* Social proof */}
@@ -301,8 +301,8 @@ export default function Hero() {
                   ))}
                 </div>
                 <p className="text-slate-400 text-xs">
-                  Trusted by <span className="text-slate-200 font-semibold">120+ founders</span> — first meeting booked in{' '}
-                  <span className="text-sky-400 font-semibold">36 hours</span>
+                  Trusted by <span className="text-slate-200 font-semibold">100+ businesses</span> — average{' '}
+                  <span className="text-sky-400 font-semibold">3x more leads captured</span>
                 </p>
               </div>
             </motion.div>

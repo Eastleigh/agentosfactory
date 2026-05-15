@@ -5,36 +5,36 @@ import { ArrowRight, TrendingUp, Clock, CalendarCheck, DollarSign } from 'lucide
 const stats = [
   {
     icon: TrendingUp,
-    value: '11x',
-    label: 'Average ROI vs. in-house SDR team',
-    sub: 'Based on 120+ deployments',
+    value: '3x',
+    label: 'More leads captured on average',
+    sub: 'Based on 100+ client deployments',
     color: '#38bdf8',
     bg: 'rgba(56,189,248,0.08)',
     border: 'rgba(56,189,248,0.15)',
   },
   {
     icon: Clock,
-    value: '36h',
-    label: 'Average time to first booked meeting',
-    sub: 'From go-live to calendar invite',
+    value: '24/7',
+    label: 'Customer response coverage',
+    sub: 'Nights, weekends, and holidays',
     color: '#34d399',
     bg: 'rgba(52,211,153,0.08)',
     border: 'rgba(52,211,153,0.15)',
   },
   {
     icon: CalendarCheck,
-    value: '500+',
-    label: 'Qualified meetings booked per month',
-    sub: 'Across all active clients',
+    value: '90%',
+    label: 'Reduction in missed calls',
+    sub: 'AI answers when you can\'t',
     color: '#fbbf24',
     bg: 'rgba(251,191,36,0.08)',
     border: 'rgba(251,191,36,0.15)',
   },
   {
     icon: DollarSign,
-    value: '87%',
-    label: 'Reduction in cost per booked meeting',
-    sub: 'vs. traditional outbound teams',
+    value: '60%',
+    label: 'Lower operational costs',
+    sub: 'vs. hiring additional staff',
     color: '#f87171',
     bg: 'rgba(248,113,113,0.08)',
     border: 'rgba(248,113,113,0.15)',
@@ -42,9 +42,9 @@ const stats = [
 ];
 
 const outcomes = [
-  { label: '148', desc: 'Leads Found' },
-  { label: '37', desc: 'Calls Made' },
-  { label: '12', desc: 'Meetings Booked' },
+  { label: '214', desc: 'Calls Answered' },
+  { label: '127', desc: 'Leads Captured' },
+  { label: '43', desc: 'Appts Booked' },
   { label: '$0', desc: 'Extra Headcount' },
 ];
 
@@ -71,10 +71,10 @@ export default function Stats() {
             <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-5">The Results</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
               Real numbers from{' '}
-              <span className="text-gradient">real deployments</span>
+              <span className="text-gradient">real businesses</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-6">
-              Every stat below comes from active client deployments. Not a demo. Not projections. Your AI workforce starts producing measurable results within 36 hours of going live.
+              Every stat below comes from active client deployments. Our AI systems start producing measurable results within the first week of going live.
             </p>
 
             {/* Outcome strip */}

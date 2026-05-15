@@ -5,24 +5,24 @@ import { ArrowRight, CheckCircle2, Loader2 } from 'lucide-react';
 const STEPS = [
   {
     question: 'What type of business do you run?',
-    options: ['B2B SaaS / Software', 'Agency / Consultancy', 'Service Business', 'E-commerce / DTC', 'Other'],
+    options: ['Home Services (HVAC, plumbing, etc.)', 'Healthcare / Med Spa', 'Agency / Consulting', 'Law Firm', 'Local Business', 'Other'],
   },
   {
-    question: 'How large is your current sales team?',
-    options: ['Just me (solo founder)', '2–5 people', '6–15 people', '15+ people'],
+    question: 'How many inbound calls/leads do you get per week?',
+    options: ['Under 20', '20–50', '50–100', '100+'],
   },
   {
-    question: 'What is your biggest sales bottleneck right now?',
+    question: 'What is your biggest challenge right now?',
     options: [
-      'Not enough outbound activity',
-      'Leads going cold / poor follow-up',
-      'Appointment no-shows',
-      'High SDR cost with low output',
-      'Inbound leads not being worked fast enough',
+      'Missing calls after hours or on weekends',
+      'Slow follow-up on leads',
+      'Too much time on manual scheduling',
+      'No system to qualify inbound leads',
+      'High staffing costs for reception/admin',
     ],
   },
   {
-    question: 'What is your monthly revenue target?',
+    question: 'What is your monthly revenue?',
     options: ['Under $50k / mo', '$50k – $200k / mo', '$200k – $500k / mo', '$500k+ / mo'],
   },
 ];
@@ -78,20 +78,20 @@ export default function CTA() {
             transition={{ duration: 0.7 }}
             className="flex-1 lg:pt-4"
           >
-            <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-5">Apply Now</p>
+            <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-5">Get Started</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6">
               Get your custom<br />
-              <span className="text-gradient">AI team built.</span>
+              <span className="text-gradient">AI system built.</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-md">
-              Fill out this 4-question survey. We'll send you a free AI ROI Report within 24 hours — then decide if it makes sense to talk.
+              Answer 4 quick questions. We'll send you a free AI Automation Audit within 24 hours — then decide if it makes sense to talk.
             </p>
 
             <div className="flex flex-col gap-4">
               {[
-                'No commitment required to apply',
-                'Free AI ROI audit delivered within 24 hours',
-                'Live in 48 hours once you decide to proceed',
+                'No commitment required',
+                'Free AI Automation Audit within 24 hours',
+                'Your system live in 7 days once you proceed',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
@@ -104,10 +104,10 @@ export default function CTA() {
               <p className="text-slate-500 text-xs uppercase tracking-widest mb-4 font-semibold">What happens next</p>
               <div className="flex flex-col gap-3">
                 {[
-                  { step: '01', text: 'We review your application' },
-                  { step: '02', text: 'You receive your free AI ROI Report' },
+                  { step: '01', text: 'We review your business needs' },
+                  { step: '02', text: 'You receive your free AI Automation Audit' },
                   { step: '03', text: 'We schedule a 30-minute strategy call' },
-                  { step: '04', text: 'Your AI team is live within 48 hours' },
+                  { step: '04', text: 'Your AI system is live within 7 days' },
                 ].map((s) => (
                   <div key={s.step} className="flex items-center gap-3">
                     <span

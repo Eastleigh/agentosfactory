@@ -6,27 +6,27 @@ const steps = [
   {
     number: '01',
     icon: UserPlus,
-    title: 'Onboard in 48 hours',
+    title: 'Onboard in 7 days',
     description:
-      "Tell us about your offer, your ideal customer, and your goals. We configure your sales workforce, write the scripts, and connect everything to your calendar and CRM — you're live in two days.",
+      "Tell us about your business, your services, and your goals. We configure your AI automation system, write the scripts, and connect everything to your calendar and CRM — you're live in one week.",
     image:
       'https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=2',
   },
   {
     number: '02',
     icon: Settings,
-    title: 'Your AI team goes to work',
+    title: 'Your AI system goes live',
     description:
-      'Your appointment-setting team begins prospecting, calling, texting, and emailing leads the moment they go live. They qualify interest, handle objections, and push every ready prospect toward a booked meeting — 24/7.',
+      'Your AI voice receptionist, chatbot, and follow-up automations begin handling calls, engaging visitors, and nurturing leads the moment they go live — capturing every opportunity 24/7.',
     image:
       'https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=2',
   },
   {
     number: '03',
     icon: TrendingUp,
-    title: 'You close, we optimize',
+    title: 'You grow, we optimize',
     description:
-      "Attend the meetings your AI booked. We continuously monitor performance, refine scripts based on conversion data, and scale what's working — so your pipeline keeps growing without extra headcount.",
+      "Focus on serving customers while your AI handles the rest. We continuously monitor performance, refine scripts, and scale what's working — so your business keeps growing without extra headcount.",
     image:
       'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=2',
   },

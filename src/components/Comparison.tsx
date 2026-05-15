@@ -4,28 +4,28 @@ import { CheckCircle2, XCircle } from 'lucide-react';
 
 const rows = [
   {
-    ai: 'Fraction of the cost of a human hire',
-    human: '$50K–$80K salary + benefits + taxes',
+    ai: 'Fraction of the cost of hiring staff',
+    human: '$40K–$60K salary + benefits per receptionist',
   },
   {
-    ai: 'Works 24/7 — nights, weekends, holidays',
-    human: 'Needs sleep, weekends, and time off',
+    ai: 'Answers calls & chats 24/7/365',
+    human: 'Limited to business hours or shifts',
   },
   {
     ai: 'Never burns out, never calls in sick',
-    human: 'Burnout, sick days, and bad performance',
+    human: 'Burnout, sick days, and turnover',
   },
   {
-    ai: 'Scales instantly — deploy more in minutes',
-    human: 'Hiring another rep takes weeks and budget',
+    ai: 'Scales instantly as your business grows',
+    human: 'Hiring takes weeks and budget',
   },
   {
-    ai: 'No benefits, payroll taxes, or HR overhead',
-    human: '20–30% burden cost on top of salary',
+    ai: 'Responds to every lead in under 60 seconds',
+    human: 'Leads wait hours or get missed entirely',
   },
   {
-    ai: 'Gets sharper with every call and reply',
-    human: 'Performance varies day to day',
+    ai: 'Improves with every customer interaction',
+    human: 'Performance varies person to person',
   },
 ];
 
@@ -48,7 +48,7 @@ export default function Comparison() {
         >
           <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">The Honest Comparison</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            AI workforce vs. a traditional hire
+            AI automation vs. hiring more staff
           </h2>
         </motion.div>
 
@@ -64,14 +64,14 @@ export default function Comparison() {
             style={{ background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)' }}
           >
             <CheckCircle2 size={18} className="text-sky-400 shrink-0" />
-            <span className="text-white font-bold text-base">AI Workforce Member</span>
+            <span className="text-white font-bold text-base">AI Automation System</span>
           </div>
           <div
             className="rounded-2xl px-6 py-4 flex items-center gap-3"
             style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             <XCircle size={18} className="text-rose-400/70 shrink-0" />
-            <span className="text-slate-400 font-bold text-base">Traditional SDR Hire</span>
+            <span className="text-slate-400 font-bold text-base">Traditional Staff Hire</span>
           </div>
         </motion.div>
 
@@ -109,7 +109,7 @@ export default function Comparison() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="text-center text-slate-500 text-sm mt-8"
         >
-          Your AI workforce handles 80% of the role — without the overhead, the turnover, or the bad days.
+          Our AI automation handles the repetitive work — without the overhead, the turnover, or the missed opportunities.
         </motion.p>
       </div>
     </section>

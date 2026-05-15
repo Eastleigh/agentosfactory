@@ -3,20 +3,20 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Phone, Mail, MessageSquare, BarChart3, Calendar, ChevronRight } from 'lucide-react';
 
 const tabs = [
-  { id: 'dashboard', label: 'Pipeline Dashboard', icon: BarChart3 },
-  { id: 'sms', label: 'SMS Sequences', icon: MessageSquare },
+  { id: 'dashboard', label: 'Lead Dashboard', icon: BarChart3 },
+  { id: 'sms', label: 'SMS Follow-Up', icon: MessageSquare },
   { id: 'call', label: 'AI Call Summary', icon: Phone },
-  { id: 'email', label: 'Email Sequences', icon: Mail },
+  { id: 'email', label: 'Email Automation', icon: Mail },
   { id: 'calendar', label: 'Appointment Booking', icon: Calendar },
 ];
 
 function DashboardMockup() {
   const leads = [
-    { name: 'Marcus Rivera', company: 'Apex HVAC', status: 'Booked', score: 92 },
-    { name: 'Sarah Chen', company: 'Precision Roofing', status: 'Calling', score: 78 },
-    { name: 'James Okafor', company: 'Elite Plumbing', status: 'Following Up', score: 65 },
-    { name: 'Dana Mills', company: 'SunPeak Solar', status: 'Qualified', score: 88 },
-    { name: 'Tom Hartley', company: 'Keystone Insulation', status: 'Prospecting', score: 51 },
+    { name: 'Marcus Rivera', company: 'Summit HVAC', status: 'Booked', score: 92 },
+    { name: 'Sarah Chen', company: 'Brighter Dental', status: 'Calling', score: 78 },
+    { name: 'James Okafor', company: 'Apex Roofing', status: 'Following Up', score: 65 },
+    { name: 'Dana Mills', company: 'Glow Med Spa', status: 'Qualified', score: 88 },
+    { name: 'Tom Hartley', company: 'Weston Law Group', status: 'Prospecting', score: 51 },
   ];
   const statusColor: Record<string, string> = {
     Booked: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
@@ -30,19 +30,19 @@ function DashboardMockup() {
       <div className="px-5 py-4 border-b border-white/8 flex items-center justify-between">
         <div>
           <p className="text-white font-semibold text-sm">Pipeline Overview</p>
-          <p className="text-slate-500 text-xs mt-0.5">Last 30 days · Full workforce active</p>
+          <p className="text-slate-500 text-xs mt-0.5">Last 30 days · All AI agents active</p>
         </div>
         <div className="flex items-center gap-4 text-xs">
           <div className="text-center">
-            <p className="text-white font-bold text-lg">148</p>
-            <p className="text-slate-500">Leads found</p>
+            <p className="text-white font-bold text-lg">214</p>
+            <p className="text-slate-500">Calls answered</p>
           </div>
           <div className="text-center">
-            <p className="text-white font-bold text-lg">37</p>
-            <p className="text-slate-500">Calls made</p>
+            <p className="text-white font-bold text-lg">127</p>
+            <p className="text-slate-500">Leads captured</p>
           </div>
           <div className="text-center">
-            <p className="text-emerald-400 font-bold text-lg">12</p>
+            <p className="text-emerald-400 font-bold text-lg">43</p>
             <p className="text-slate-500">Booked</p>
           </div>
         </div>
@@ -85,11 +85,11 @@ function DashboardMockup() {
 
 function SmsMockup() {
   const msgs = [
-    { from: 'ai', text: "Hi Marcus, this is Alex — we help HVAC companies book more service calls without hiring extra staff. Do you have 15 mins this week?", time: '9:02 AM' },
-    { from: 'lead', text: "How does that work exactly?", time: '9:14 AM' },
-    { from: 'ai', text: "We deploy a dedicated appointment-setting team that calls, texts, and follows up with leads 24/7 — books jobs directly on your calendar. Would Tuesday at 2pm work for a quick call?", time: '9:15 AM' },
+    { from: 'ai', text: "Hi Marcus! Thanks for requesting a quote. I'd love to get you scheduled with our team. Does Tuesday at 2pm work?", time: '9:02 AM' },
+    { from: 'lead', text: "How long does the appointment take?", time: '9:14 AM' },
+    { from: 'ai', text: "Just 30 minutes! We'll go over your needs and provide a same-day estimate. I'll send a calendar invite right now.", time: '9:15 AM' },
     { from: 'lead', text: "Yeah Tuesday works. Send me the link.", time: '9:18 AM' },
-    { from: 'ai', text: "Perfect! Here's your booking link — see you Tuesday at 2pm!", time: '9:18 AM' },
+    { from: 'ai', text: "Done! Calendar invite sent. See you Tuesday at 2pm, Marcus!", time: '9:18 AM' },
   ];
   return (
     <div className="rounded-xl overflow-hidden max-w-sm mx-auto" style={{ background: '#0c1422', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -121,12 +121,12 @@ function SmsMockup() {
 
 function CallMockup() {
   const points = [
-    'Prospect confirmed pain point: current team misses 40% of inbound calls',
-    'Showed interest in automated follow-up sequences',
-    'Budget range confirmed: $1,000–$3,000/month',
-    'Decision maker confirmed — no other stakeholders needed',
-    'Objection raised: "We tried chatbots before" — handled with case study',
-    'Meeting booked: Tuesday March 18 at 2:00 PM EST',
+    'Caller requested an emergency plumbing repair estimate',
+    'AI captured property address, issue details, and availability',
+    'Urgency confirmed: water leak in kitchen — same-day service needed',
+    'Customer confirmed budget range for emergency repairs',
+    'Appointment booked: Today at 3:00 PM — tech dispatched',
+    'Follow-up reminder sent via SMS with technician details',
   ];
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: '#0c1422', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -137,7 +137,7 @@ function CallMockup() {
           </div>
           <div>
             <p className="text-white font-semibold text-sm">Call Summary — Sarah Chen</p>
-            <p className="text-slate-500 text-xs">Precision Roofing · Mar 14, 10:32 AM · 8m 14s</p>
+            <p className="text-slate-500 text-xs">Brighter Dental · Mar 14, 10:32 AM · 4m 22s</p>
           </div>
         </div>
         <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">Booked</span>
@@ -155,7 +155,7 @@ function CallMockup() {
         <div className="mt-4 pt-4 border-t border-white/8 flex items-center justify-between">
           <div>
             <p className="text-slate-500 text-xs">Recommended next step</p>
-            <p className="text-sky-400 text-sm font-medium mt-0.5">Send proposal before Tuesday call</p>
+            <p className="text-sky-400 text-sm font-medium mt-0.5">Dispatch technician for 3 PM appointment</p>
           </div>
           <button className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sky-500/20 text-sky-400 text-xs font-medium border border-sky-500/30 hover:bg-sky-500/30 transition-colors">
             View transcript <ChevronRight size={12} />
@@ -168,10 +168,10 @@ function CallMockup() {
 
 function EmailMockup() {
   const steps = [
-    { step: 1, subject: 'Quick question about your roofing pipeline', sent: 'Mar 11 · 9:00 AM', status: 'Opened', opens: 1 },
-    { step: 2, subject: 'How Apex HVAC booked 23 jobs in 30 days', sent: 'Mar 13 · 10:15 AM', status: 'Clicked', opens: 3 },
-    { step: 3, subject: 'Still thinking it over? Here\'s what clients say', sent: 'Mar 16 · 9:00 AM', status: 'Pending', opens: 0 },
-    { step: 4, subject: 'Last touch — worth 15 minutes?', sent: 'Mar 19 · 9:00 AM', status: 'Scheduled', opens: 0 },
+    { step: 1, subject: 'Thanks for your inquiry — here\'s what to expect', sent: 'Mar 11 · 9:00 AM', status: 'Opened', opens: 1 },
+    { step: 2, subject: 'Your appointment is coming up — quick reminder', sent: 'Mar 13 · 10:15 AM', status: 'Clicked', opens: 3 },
+    { step: 3, subject: 'How was your experience? We\'d love feedback', sent: 'Mar 16 · 9:00 AM', status: 'Pending', opens: 0 },
+    { step: 4, subject: 'Time for your next checkup?', sent: 'Mar 19 · 9:00 AM', status: 'Scheduled', opens: 0 },
   ];
   const color: Record<string, string> = {
     Opened: 'text-emerald-400',
@@ -182,8 +182,8 @@ function EmailMockup() {
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: '#0c1422', border: '1px solid rgba(255,255,255,0.08)' }}>
       <div className="px-5 py-4 border-b border-white/8">
-        <p className="text-white font-semibold text-sm">Email Sequence — Roofing Outreach v2</p>
-        <p className="text-slate-500 text-xs mt-0.5">4 steps · 847 contacts enrolled · 38% open rate</p>
+        <p className="text-white font-semibold text-sm">Email Sequence — Patient Follow-Up</p>
+        <p className="text-slate-500 text-xs mt-0.5">4 steps · 312 patients enrolled · 42% open rate</p>
       </div>
       <div className="p-4 flex flex-col gap-3">
         {steps.map((s) => (
@@ -208,17 +208,17 @@ function EmailMockup() {
 
 function CalendarMockup() {
   const appointments = [
-    { time: '9:00 AM', name: 'James Okafor', co: 'Elite Plumbing', type: 'Strategy Call', duration: '30 min' },
-    { time: '11:00 AM', name: 'Dana Mills', co: 'SunPeak Solar', type: 'Demo Call', duration: '45 min' },
-    { time: '2:00 PM', name: 'Sarah Chen', co: 'Precision Roofing', type: 'Intro Call', duration: '30 min' },
-    { time: '4:30 PM', name: 'Tom Hartley', co: 'Keystone Insulation', type: 'Strategy Call', duration: '30 min' },
+    { time: '9:00 AM', name: 'James Okafor', co: 'Apex Roofing', type: 'Estimate Visit', duration: '30 min' },
+    { time: '11:00 AM', name: 'Dana Mills', co: 'Glow Med Spa', type: 'Consultation', duration: '45 min' },
+    { time: '2:00 PM', name: 'Sarah Chen', co: 'Brighter Dental', type: 'New Patient', duration: '30 min' },
+    { time: '4:30 PM', name: 'Tom Hartley', co: 'Weston Law Group', type: 'Intake Call', duration: '30 min' },
   ];
   return (
     <div className="rounded-xl overflow-hidden" style={{ background: '#0c1422', border: '1px solid rgba(255,255,255,0.08)' }}>
       <div className="px-5 py-4 border-b border-white/8 flex items-center justify-between">
         <div>
           <p className="text-white font-semibold text-sm">Tuesday, March 18</p>
-          <p className="text-slate-500 text-xs mt-0.5">4 appointments set by your team</p>
+          <p className="text-slate-500 text-xs mt-0.5">4 appointments booked by AI</p>
         </div>
         <span className="px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-400 text-xs font-semibold border border-sky-500/30">All confirmed</span>
       </div>
@@ -269,10 +269,10 @@ export default function ProductScreenshots() {
         >
           <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">The Platform</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            See your revenue workforce in action
+            See your AI automation in action
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            Every touchpoint is tracked, summarized, and optimized — from the first outreach to the booked call.
+            Every call, chat, and follow-up is tracked, summarized, and optimized — so nothing slips through the cracks.
           </p>
         </motion.div>
 

@@ -3,18 +3,18 @@ import { motion, useInView } from 'framer-motion';
 import { Check, ArrowRight, Zap } from 'lucide-react';
 
 const starter = {
-  name: 'AI Sales Team',
+  name: 'AI Business Automation',
   price: '$997',
   period: '/ month',
   setup: '$2,500 one-time setup',
-  tagline: 'Everything you need to fill your calendar with qualified meetings — without hiring a single SDR.',
-  outcome: 'Average 20+ qualified meetings/month',
+  tagline: 'Everything you need to capture leads, answer customers, and book appointments — without hiring additional staff.',
+  outcome: 'Average 3x more leads captured per month',
   items: [
-    'AI voice caller — dials leads 24/7',
-    'AI email outreach — personalized at scale',
-    'AI SMS follow-up sequences',
-    'Automatic appointment booking',
-    'CRM sync & pipeline analytics',
+    'AI voice receptionist — answers calls 24/7',
+    'AI chatbot — engages website visitors instantly',
+    'SMS & email follow-up automation',
+    'Automatic appointment booking & reminders',
+    'CRM integration (GoHighLevel, HubSpot, etc.)',
     'Weekly performance optimization',
     'Dedicated account manager',
     '14-day money-back guarantee',
@@ -22,8 +22,8 @@ const starter = {
 };
 
 const addOns = [
-  { name: 'AI Revenue Department', price: '$2,500/mo', desc: '5 agents + inbound coverage + custom CRM' },
-  { name: 'AI Operator', price: '$5,000/mo', desc: 'Unlimited agents + white-label + priority support' },
+  { name: 'AI Growth System', price: '$2,500/mo', desc: 'Multi-channel automation + advanced CRM + custom workflows' },
+  { name: 'AI Enterprise', price: '$5,000/mo', desc: 'Unlimited agents + custom SaaS tools + white-label + priority support' },
 ];
 
 export default function Pricing() {
@@ -45,11 +45,11 @@ export default function Pricing() {
         >
           <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">Pricing</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            One offer. One outcome.{' '}
-            <span className="text-gradient">Meetings on your calendar.</span>
+            One system. One outcome.{' '}
+            <span className="text-gradient">Revenue on autopilot.</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            No hiring, no training, no management. Your AI workforce is live in 48 hours and booking qualified meetings within the first week.
+            No hiring, no training, no management. Your AI automation system is live in 7 days and capturing leads from day one.
           </p>
         </motion.div>
 
@@ -78,7 +78,7 @@ export default function Pricing() {
                     <Zap size={10} /> Most Popular
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold border border-emerald-500/30">
-                    Live in 48 hours
+                    Live in 7 days
                   </span>
                 </div>
 
@@ -122,7 +122,7 @@ export default function Pricing() {
                   rel="noopener noreferrer"
                   className="group w-full py-4 rounded-xl font-bold text-sm text-center text-white bg-sky-500 hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/35 hover:-translate-y-0.5 flex items-center justify-center gap-2"
                 >
-                  Deploy Your AI Sales Team
+                  Deploy Your AI System
                   <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </div>
@@ -168,7 +168,7 @@ export default function Pricing() {
           transition={{ delay: 0.45, duration: 0.6 }}
           className="text-center text-slate-500 text-sm"
         >
-          All plans include 14-day money-back guarantee · No long-term contracts · Cancel anytime
+          All plans include a 14-day money-back guarantee · No long-term contracts · Cancel anytime
         </motion.p>
       </div>
     </section>

@@ -6,35 +6,35 @@ const industries = [
   {
     icon: Home,
     name: 'Home Services',
-    examples: 'HVAC, Roofing, Solar, Plumbing',
-    outcome: '20+ qualified estimates/month',
+    examples: 'HVAC, Plumbing, Roofing, Electrical',
+    outcome: 'AI receptionist books jobs 24/7',
     color: '#38bdf8',
     bg: 'rgba(56,189,248,0.08)',
     border: 'rgba(56,189,248,0.18)',
   },
   {
-    icon: Building2,
-    name: 'Real Estate',
-    examples: 'Agents, brokers, investors',
-    outcome: 'Seller & buyer appointments on autopilot',
+    icon: Stethoscope,
+    name: 'Healthcare & Clinics',
+    examples: 'Med spas, dental, chiropractic',
+    outcome: 'Patient booking & reactivation automated',
     color: '#34d399',
     bg: 'rgba(52,211,153,0.08)',
     border: 'rgba(52,211,153,0.18)',
   },
   {
-    icon: Shield,
-    name: 'Insurance',
-    examples: 'Life, health, P&C agencies',
-    outcome: 'Policy quotes & renewals booked daily',
+    icon: Briefcase,
+    name: 'Agencies',
+    examples: 'Marketing, creative, consulting',
+    outcome: 'Lead qualification on autopilot',
     color: '#fbbf24',
     bg: 'rgba(251,191,36,0.08)',
     border: 'rgba(251,191,36,0.18)',
   },
   {
-    icon: Briefcase,
-    name: 'B2B SaaS',
-    examples: 'Software & tech companies',
-    outcome: 'Demo calls filled without an SDR team',
+    icon: Building2,
+    name: 'Local Businesses',
+    examples: 'Restaurants, salons, retail',
+    outcome: 'Never miss a customer call again',
     color: '#38bdf8',
     bg: 'rgba(56,189,248,0.08)',
     border: 'rgba(56,189,248,0.18)',
@@ -42,26 +42,26 @@ const industries = [
   {
     icon: Scale,
     name: 'Law Firms',
-    examples: 'Personal injury, business law',
+    examples: 'Personal injury, family, business law',
     outcome: 'Intake calls qualified & scheduled 24/7',
     color: '#f87171',
     bg: 'rgba(248,113,113,0.08)',
     border: 'rgba(248,113,113,0.18)',
   },
   {
-    icon: Stethoscope,
-    name: 'Med Spas & Clinics',
-    examples: 'Aesthetics, dental, wellness',
-    outcome: 'Reactivations & new bookings automated',
+    icon: Shield,
+    name: 'Insurance',
+    examples: 'Life, health, P&C agencies',
+    outcome: 'Automated quote follow-ups & renewals',
     color: '#34d399',
     bg: 'rgba(52,211,153,0.08)',
     border: 'rgba(52,211,153,0.18)',
   },
   {
     icon: TrendingUp,
-    name: 'Financial Services',
-    examples: 'Advisors, mortgage, accounting',
-    outcome: 'Discovery calls booked without cold calls',
+    name: 'Service Businesses',
+    examples: 'Cleaning, pest control, landscaping',
+    outcome: 'Estimate requests captured automatically',
     color: '#fbbf24',
     bg: 'rgba(251,191,36,0.08)',
     border: 'rgba(251,191,36,0.18)',
@@ -69,8 +69,8 @@ const industries = [
   {
     icon: Wrench,
     name: 'Contractors',
-    examples: 'Remodeling, electrical, landscaping',
-    outcome: 'Estimate pipeline running 24/7',
+    examples: 'Remodeling, solar, general contractors',
+    outcome: 'Inbound lead pipeline running 24/7',
     color: '#f87171',
     bg: 'rgba(248,113,113,0.08)',
     border: 'rgba(248,113,113,0.18)',
@@ -82,7 +82,7 @@ export default function WhoItsFor() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-28 relative overflow-hidden" ref={ref}>
+    <section id="industries" className="py-28 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/3 w-[600px] h-[400px] bg-cyan-600/5 rounded-full blur-[120px]" />
       </div>
@@ -96,11 +96,11 @@ export default function WhoItsFor() {
         >
           <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">Who It's For</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            Built for businesses that run on{' '}
-            <span className="text-gradient">booked appointments</span>
+            Built for businesses that need{' '}
+            <span className="text-gradient">24/7 customer response</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            If your revenue depends on getting qualified prospects onto a call or into a meeting, this workforce was built for you.
+            If missed calls, slow follow-ups, or manual scheduling are costing you revenue, our AI automation systems were built for you.
           </p>
         </motion.div>
 
