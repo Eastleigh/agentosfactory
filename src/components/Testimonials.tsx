@@ -165,7 +165,7 @@ export default function Testimonials() {
             Real results. Real businesses.
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            Founders and sales leaders who replaced their SDR teams with a workforce that never sleeps.
+            Real businesses using AI automation to capture more leads and never miss a call.
           </p>
         </motion.div>
 

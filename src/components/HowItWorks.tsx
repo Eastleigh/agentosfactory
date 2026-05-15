@@ -59,8 +59,8 @@ const formula1Examples = [
   },
   {
     industry: 'SaaS Company',
-    role: 'SDR',
-    task: 'Cold outreach & demo scheduling',
+    role: 'Sales Rep',
+    task: 'Lead follow-up & demo scheduling',
     hrsPerWeek: 40,
     people: 3,
     hourlyRate: 45,
@@ -200,7 +200,7 @@ const formula5Examples = [
   },
   {
     industry: 'SaaS Company',
-    task: 'Replacing a junior SDR',
+    task: 'Replacing a junior sales rep',
     plannedSalary: 72000,
     agentMonthly: 997,
   },
@@ -260,7 +260,7 @@ export default function HowItWorks() {
         >
           <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">How It Works</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            From zero to a live sales workforce in 48 hours
+            From zero to a live AI automation system in 7 days
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
             No lengthy onboarding. No hiring headaches. No technical setup. Just results.

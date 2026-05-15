@@ -137,7 +137,7 @@ export default function CTA() {
               {/* Header */}
               <div className="px-7 pt-7 pb-5 border-b border-white/6">
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-white font-bold text-sm">Apply for a custom AI team</p>
+                  <p className="text-white font-bold text-sm">Get your custom AI system</p>
                   {!submitted && (
                     <span className="text-slate-500 text-xs font-medium">
                       {isLastStep ? 'Final step' : `${step + 1} of ${STEPS.length}`}
@@ -175,7 +175,7 @@ export default function CTA() {
                       </div>
                       <h3 className="text-white text-xl font-bold mb-2">Application received</h3>
                       <p className="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
-                        Check your inbox — your free AI ROI Report will arrive within 24 hours.
+                        Check your inbox — your free AI Automation Audit will arrive within 24 hours.
                       </p>
                     </motion.div>
                   ) : !isLastStep ? (
@@ -214,7 +214,7 @@ export default function CTA() {
                       transition={{ duration: 0.28 }}
                     >
                       <p className="text-white font-semibold text-base mb-2 leading-snug">
-                        Where should we send your free AI ROI Report?
+                        Where should we send your free AI Automation Audit?
                       </p>
                       <p className="text-slate-500 text-xs mb-6">No spam. Unsubscribe any time.</p>
 
@@ -249,7 +249,7 @@ export default function CTA() {
                             <Loader2 size={16} className="animate-spin" />
                           ) : (
                             <>
-                              Send my free ROI Report
+                              Send my free Automation Audit
                               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                             </>
                           )}
